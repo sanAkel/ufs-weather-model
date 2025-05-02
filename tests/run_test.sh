@@ -435,6 +435,15 @@ if [[ "${JOB_SHOULD_FAIL:-NO}" == WHEN_COPYING ]] ; then
     false
 fi
 
+echo " "
+echo "--------------- Intentionally Exit here ----------------"
+echo "--------------- Without submitting to the queue --------"
+echo " "
+echo "-- This will be changed once DATM test cases have been finalized --" 
+echo " "
+exit 99
+echo " "
+
 ################################################################################
 # Submit test job
 ################################################################################
