@@ -736,15 +736,15 @@ case ${MACHINE_ID} in
     PARTITION=c5
     dprefix=${dprefix:-/gpfs/f5/${ACCNR}/scratch/${USER}}
     STMP=${STMP:-${dprefix}/RT_BASELINE}
-    PTMP=${PTMP:-${dprefix}/RT_RUNDIRS} 
+    PTMP=${PTMP:-${dprefix}/RT_RUNDIRS}
 
     SCHEDULER="slurm"
     ;;
   gaeac6)
     echo "rt.sh: Setting up gaea c6..."
     if [[ "${ROCOTO:-false}" == true ]] ; then
-      module use /ncrc/proj/epic/c6/modulefiles
-      module load rocoto/1.3.7
+      module use /autofs/ncrc-svm1_proj/hurr1/hafs/shared/modulefiles
+      module load rocoto/1.3.7_fix
       ROCOTO_SCHEDULER="slurm"
     fi
 
