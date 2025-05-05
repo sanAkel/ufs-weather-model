@@ -2,9 +2,9 @@
 #  DATM_CDEPS_MOM6_CICE_CMEPS_GEFS test
 #
 
-export TEST_DESCR="DATM_CDEPS-MOM6-CICE-CMEPS_GEFS - 1/4deg ocean+ice"
+export TEST_DESCR="DATM_CDEPS-MOM6-CICE-CMEPS_GEFS - 1deg ocean+ice"
 
-export CNTL_DIR=datm_cdeps_mx025_gefs
+export CNTL_DIR=datm_cdeps_mx100_gefs
 
 export LIST_FILES="RESTART/20111001.120000.MOM.res.nc \
                    RESTART/20111001.120000.MOM.res_1.nc \
@@ -37,10 +37,10 @@ OCN_tasks=${OCN_tasks_cdeps_025}
 ICE_tasks=${ICE_tasks_cdeps_025}
 
 # ocn/ice resolution
-export OCNRES=025
-export ICERES=0.25
-export NX_GLB=1440
-export NY_GLB=1080
+export OCNRES=100
+export ICERES=1.00
+export NX_GLB=360
+export NY_GLB=320
 export CICE_NPROC=48
 export np2=`expr $CICE_NPROC / 2`
 export CICE_BLCKX=`expr $NX_GLB / $np2`
@@ -53,9 +53,9 @@ export MESH_ICE=mesh.mx${OCNRES}.nc
 export MESH_OCN=mesh.mx${OCNRES}.nc
 export CICE_GRID=grid_cice_NEMS_mx${OCNRES}.nc
 export CICE_MASK=kmtu_cice_NEMS_mx${OCNRES}.nc
-export MOM6_CHLCLIM='"seawifs-clim-1997-2010.1440x1080.v20180328.nc"'
+export MOM6_CHLCLIM='"seawifs_1998-2006_smoothed_2X.nc"'
 export MOM6_RIVER_RUNOFF=True
-export MOM6_FRUNOFF=runoff.daitren.clim.1440x1080.v20180328.nc
+export MOM6_FRUNOFF=runoff.daitren.clim.1deg.nc
 export MOM6_RESTART_SETTING=r
 
 export FV3_RUN=cpld_datm_cdeps.IN
