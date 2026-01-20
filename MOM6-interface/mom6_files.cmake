@@ -226,6 +226,9 @@ list(APPEND mom6_src_files
   MOM6/src/parameterizations/CVmix/cvmix_tidal.F90
   MOM6/src/parameterizations/CVmix/cvmix_utils.F90
 
+  MOM6/config_src/external/stochastic_physics/stochastic_physics.F90
+  MOM6/config_src/external/stochastic_physics/get_stochy_pattern.F90
+
   MOM6/src/parameterizations/stochastic/MOM_stochastics.F90
   MOM6/src/parameterizations/lateral/MOM_wave_drag.F90
 
