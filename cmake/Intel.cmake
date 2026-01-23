@@ -11,7 +11,8 @@ set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -diag-disable 7712")
 set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -diag-disable 8291")
 
 if(CMAKE_Platform STREQUAL "derecho.intel")
-  set(CMAKE_Fortran_LINK_FLAGS "-Wl,--copy-dt-needed-entries")
+# set(CMAKE_Fortran_LINK_FLAGS "-Wl,--copy-dt-needed-entries")
+  set(CMAKE_Fortran_LINK_FLAGS "-Wl,--allow-multiple-definition,--copy-dt-needed-entries")
 endif()
 
 if(NOT 32BIT)

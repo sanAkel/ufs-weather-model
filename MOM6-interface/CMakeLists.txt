@@ -59,7 +59,7 @@ else()
 endif()
 target_link_libraries(mom6_obj PRIVATE fms
                                        ESMF::ESMF
-                                       stochastic_physics
+#                                      stochastic_physics
                                        NetCDF::NetCDF_Fortran
                                        cdeps::cdeps)
 # OpenMP is disabled in MOM6
@@ -81,7 +81,7 @@ else()
 endif()
 target_link_libraries(mom6_nuopc_obj PRIVATE mom6_obj
                                              fms
-                                             stochastic_physics
+#                                            stochastic_physics
                                              ESMF::ESMF)
 # OpenMP is disabled in MOM6
 #if(OpenMP_Fortran_FOUND)
@@ -96,7 +96,7 @@ target_include_directories(mom6 PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_
 target_include_directories(mom6 PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/MOM6/config_src/memory/dynamic_nonsymmetric>
                                        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/MOM6/src/framework>)
 target_link_libraries(mom6 PUBLIC fms
-                                  stochastic_physics
+#                                 stochastic_physics
                                   ESMF::ESMF
                                   NetCDF::NetCDF_Fortran
                                   cdeps::cdeps)
@@ -117,7 +117,7 @@ if(MOM6SOLO)
                                               $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/MOM6/src/framework>)
   target_link_libraries(mom6solo PRIVATE mom6_obj
                                          fms
-                                         stochastic_physics
+#                                        stochastic_physics
                                          ESMF::ESMF
                                          NetCDF::NetCDF_Fortran)
   # OpenMP is disabled in MOM6
